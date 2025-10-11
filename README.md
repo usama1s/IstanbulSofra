@@ -1,6 +1,6 @@
 # Istanbul Sofra - Turkish Restaurant Website
 
-A beautiful, responsive React website for Istanbul Sofra, an authentic Turkish restaurant. Built with React, Vite, and Tailwind CSS.
+A beautiful, responsive single-page React website for Istanbul Sofra, an authentic Turkish restaurant. Built with React, Vite, and Tailwind CSS.
 
 ## Features
 
@@ -15,7 +15,6 @@ A beautiful, responsive React website for Istanbul Sofra, an authentic Turkish r
 ## Technologies Used
 
 - **React 18** - Modern React with functional components and hooks
-- **React Router** - For navigation between pages
 - **Vite** - Fast build tool and development server
 - **Tailwind CSS** - Utility-first CSS framework
 - **Lucide React** - Beautiful, customizable icons
@@ -65,11 +64,8 @@ istanbul-sofra/
 │   │   ├── Contact.jsx     # Contact info and reservation form
 │   │   └── Footer.jsx      # Footer with links and info
 │   ├── pages/
-│   │   ├── HomePage.jsx    # Home page layout
-│   │   └── MenuPage.jsx    # Dedicated menu page
-│   ├── utils/
-│   │   └── scrollUtils.js  # Scroll navigation utilities
-│   ├── App.jsx            # Main app component with routing
+│   │   └── HomePage.jsx    # Single page layout with all sections
+│   ├── App.jsx            # Main app component
 │   ├── main.jsx           # App entry point
 │   └── index.css          # Global styles and Tailwind imports
 ├── index.html             # HTML template
@@ -91,7 +87,7 @@ istanbul-sofra/
 - Sticky navigation with smooth scroll
 - Mobile-responsive hamburger menu
 - Dynamic styling based on scroll position
-- Cross-page navigation support
+- Single-page anchor navigation
 
 ### About
 - Restaurant story and history

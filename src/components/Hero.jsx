@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   const dishes = [
     { 
       name: 'Adana Kebab', 
@@ -58,12 +63,18 @@ const Hero = () => {
                 
                 {/* Call to Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/menu" className="btn-primary text-lg px-8 py-4 inline-block text-center">
+                  <button 
+                    onClick={() => scrollToSection('menu')}
+                    className="btn-primary text-lg px-8 py-4"
+                  >
                     Explore Menu
-                  </Link>
-                  <Link to="#contact" className="btn-secondary text-lg px-8 py-4 inline-block text-center">
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('contact')}
+                    className="btn-secondary text-lg px-8 py-4"
+                  >
                     Reserve Table
-                  </Link>
+                  </button>
                 </div>
               </div>
             )}
