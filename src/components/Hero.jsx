@@ -7,87 +7,122 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
-  const dishes = [
+  const slides = [
     { 
+      type: 'restaurant',
+      name: 'Istanbul Sofra', 
+      subtitle: 'Authentic Turkish Restaurant',
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+    },
+    { 
+      type: 'dish',
       name: 'Adana Kebab', 
       turkish: 'Adana Kebap', 
       image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     },
     { 
+      type: 'dish',
       name: 'Baklava', 
       turkish: 'Baklava', 
       image: 'https://images.unsplash.com/photo-1571197119049-cdba2770db8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     },
     { 
+      type: 'dish',
       name: 'Turkish Delight', 
       turkish: 'Lokum', 
       image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     },
     { 
+      type: 'dish',
       name: 'Turkish Coffee', 
       turkish: 'Türk Kahvesi', 
       image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    },
-    { 
-      name: 'Mixed Grill', 
-      turkish: 'Karışık Izgara', 
-      image: 'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     }
   ]
 
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="floating-elements absolute top-20 left-10 w-32 h-32 border border-red-500/20 rounded-full"></div>
+        <div className="floating-elements absolute top-40 right-20 w-20 h-20 border border-white/10 rounded-full" style={{animationDelay: '2s'}}></div>
+        <div className="floating-elements absolute bottom-40 left-20 w-16 h-16 border border-red-400/30 rounded-full" style={{animationDelay: '4s'}}></div>
+        <div className="floating-elements absolute bottom-20 right-40 w-24 h-24 border border-white/15 rounded-full" style={{animationDelay: '1s'}}></div>
+      </div>
+
       <div className="carousel-slides flex w-[500%] h-full">
-        {dishes.map((dish, index) => (
+        {slides.map((slide, index) => (
           <div 
             key={index} 
-            className="w-1/5 h-full relative bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${dish.image})` }}
+            className="w-1/5 h-full relative bg-cover bg-center bg-no-repeat transition-all duration-1000"
+            style={{ backgroundImage: `url(${slide.image})` }}
           >
-            {/* Dark shadow overlay on images */}
-            <div className="absolute inset-0 bg-black bg-opacity-80 z-10"></div>
+            {/* Enhanced gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/40 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 z-10"></div>
             
-            {/* Main content overlay - only on first slide */}
-            {index === 0 && (
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white max-w-4xl px-8 md:px-4">
-                <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight drop-shadow-2xl">
-                  Istanbul Sofra
-                </h1>
-                <h2 className="text-2xl md:text-3xl mb-8 font-light tracking-wide drop-shadow-xl">
-                  Authentic Turkish Cuisine Experience
-                </h2>
-                <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg">
-                  Discover the exquisite flavors of Turkey through our carefully curated dishes, 
-                  each prepared with traditional techniques and the finest ingredients.
-                </p>
-                
-                {/* Call to Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button 
-                    onClick={() => scrollToSection('menu')}
-                    className="btn-primary text-lg px-8 py-4"
-                  >
-                    Explore Menu
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('contact')}
-                    className="btn-secondary text-lg px-8 py-4"
-                  >
-                    Reserve Table
-                  </button>
+            {/* Restaurant slide content - centered */}
+            {slide.type === 'restaurant' && (
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white max-w-4xl px-8 md:px-4" style={{zIndex: 55}}>
+                <div className="hero-text-animation">
+                  <h1 className="text-7xl md:text-9xl font-bold mb-8 leading-tight gradient-text">
+                    {slide.name}
+                  </h1>
+                  <div className="w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent mx-auto mb-8"></div>
+                  <h2 className="text-2xl md:text-3xl mb-12 font-light tracking-wide text-white/90 hero-text-animation" style={{animationDelay: '0.3s'}}>
+                    {slide.subtitle}
+                  </h2>
+                  
+                  {/* Single Menu Button */}
+                  <div className="hero-text-animation" style={{animationDelay: '0.6s'}}>
+                    <button 
+                      onClick={() => scrollToSection('menu')}
+                      className="btn-primary text-xl px-12 py-5 hero-button-hover transform hover:scale-105 transition-all duration-300 shadow-2xl"
+                    >
+                      <span className="relative z-10">View Menu</span>
+                    </button>
+                  </div>
                 </div>
+
+                {/* Decorative elements around main content */}
+                <div className="absolute -top-10 -left-10 w-20 h-20 border-2 border-red-500/30 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-10 -right-10 w-16 h-16 border border-white/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
             )}
             
-            {/* Dish name overlay */}
-            <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 z-20 text-white">
-              <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2 drop-shadow-2xl">
-                {dish.name}
-              </h3>
-              <p className="text-red-400 text-xl md:text-3xl lg:text-4xl font-medium italic drop-shadow-xl">
-                {dish.turkish}
-              </p>
+            {/* Dish slides content - bottom left corner */}
+            {slide.type === 'dish' && (
+              <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 text-white bg-black/80 backdrop-blur-md rounded-2xl p-6 md:p-8 transform hover:scale-105 transition-all duration-300 border border-white/20" style={{zIndex: 70}}>
+                <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white drop-shadow-2xl">
+                  {slide.name}
+                </h3>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-transparent mb-3"></div>
+                <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl">
+                  {slide.turkish}
+                </p>
+              </div>
+            )}
+
+            {/* Additional visual elements for each slide */}
+            <div className="absolute top-1/4 right-8 md:right-16 z-15 opacity-20">
+              <div className="w-2 h-2 bg-red-500 rounded-full mb-4 animate-pulse"></div>
+              <div className="w-1 h-16 bg-gradient-to-b from-red-500 to-transparent"></div>
             </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom progress indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2" style={{zIndex: 65}}>
+        {slides.map((_, index) => (
+          <div key={index} className="w-8 h-1 bg-white/30 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-red-500 rounded-full animate-pulse"
+              style={{
+                animationDelay: `${index * 6}s`,
+                animationDuration: '30s'
+              }}
+            ></div>
           </div>
         ))}
       </div>
