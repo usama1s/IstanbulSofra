@@ -28,46 +28,7 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-slate-900">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text Content */}
-          <div>
-            <div className="mb-8">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6">
-                Our Story
-              </h2>
-              <div className="w-20 h-1 bg-red-600 mb-6"></div>
-              <p className="text-lg text-slate-200 leading-relaxed mb-6">
-                Founded in 1998 by the Özkan family, Istanbul Sofra began as a small neighborhood 
-                restaurant with a simple mission: to share the authentic flavors of Turkish cuisine 
-                with our community.
-              </p>
-              <p className="text-lg text-slate-200 leading-relaxed mb-6">
-                Today, we continue that tradition, serving time-honored recipes in a warm, 
-                welcoming atmosphere that makes every guest feel like family. Our kitchen is 
-                the heart of our restaurant, where traditional techniques meet the freshest ingredients.
-              </p>
-              <p className="text-lg text-slate-200 leading-relaxed">
-                From our wood-fired kebabs to our homemade baklava, every dish reflects our 
-                commitment to authenticity and quality that has made us a beloved destination 
-                for Turkish cuisine lovers.
-              </p>
-            </div>
-          </div>
 
-          {/* Right Column - Image Placeholder */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 h-96 flex items-center justify-center border border-slate-700">
-              <div className="text-center text-slate-200">
-                <ChefHat size={80} className="mx-auto mb-4 opacity-50 text-red-400" />
-                <p className="text-xl font-semibold">Restaurant Interior</p>
-                <p className="text-sm mt-2 opacity-75">Warm & Welcoming Atmosphere</p>
-              </div>
-            </div>
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-red-600 rounded-full opacity-20"></div>
-            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-slate-700 rounded-full opacity-30"></div>
-          </div>
-        </div>
 
         {/* Features Grid */}
         <div className="mt-20">

@@ -59,9 +59,6 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <button className="btn-primary">
-                Reserve Table
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -94,9 +91,6 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <button className="btn-primary w-full mt-4">
-                Reserve Table
-              </button>
             </div>
           </div>
         )}

@@ -238,22 +238,6 @@ const Menu = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16 bg-gradient-to-r from-gray-800 to-slate-800 border border-slate-700 p-8 rounded-2xl">
-          <h3 className="text-2xl font-bold text-slate-100 mb-4">
-            Ready to Experience Turkish Cuisine?
-          </h3>
-          <p className="text-slate-200 mb-6 max-w-2xl mx-auto">
-            Reserve your table now and embark on a culinary journey through the flavors of Turkey. 
-            Our chefs are waiting to serve you an unforgettable dining experience.
-          </p>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="btn-primary text-lg px-8 py-4"
-          >
-            Make a Reservation
-          </button>
-        </div>
       </div>
     </section>
   )
