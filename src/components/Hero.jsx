@@ -94,19 +94,10 @@ const Hero = () => {
             
                 {/* Dish slides content - bottom left corner */}
                 {slide.type === 'dish' && (
-                  <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 text-white bg-black/80 backdrop-blur-md rounded-2xl p-6 md:p-8 transform hover:scale-105 transition-all duration-300 border border-white/20" style={{zIndex: 70}}>
-                    <div className="flex justify-between items-start mb-3">
-                      <div className="flex-1">
-                        <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white drop-shadow-2xl">
-                          {slide.name}
-                        </h3>
-                      </div>
-                      {slide.price && (
-                        <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-red-400 ml-4 drop-shadow-xl">
-                          {slide.price}
-                        </span>
-                      )}
-                    </div>
+                  <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 text-white" style={{zIndex: 70}}>
+                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white drop-shadow-2xl">
+                      {slide.name}
+                    </h3>
                     <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-transparent mb-3"></div>
                     <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl mb-2">
                       {slide.turkish}
