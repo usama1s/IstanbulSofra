@@ -1,183 +1,176 @@
 import React, { useState } from 'react'
 import { Star } from 'lucide-react'
 
-const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState('appetizers')
-
-  const categories = [
-    { id: 'appetizers', name: 'Appetizers', turkish: 'Mezeler' },
-    { id: 'mains', name: 'Main Courses', turkish: 'Ana Yemekler' },
-    { id: 'grills', name: 'Grilled Specialties', turkish: 'Izgara' },
-    { id: 'desserts', name: 'Desserts', turkish: 'Tatlılar' },
-    { id: 'beverages', name: 'Beverages', turkish: 'İçecekler' }
-  ]
-
-  const menuItems = {
-    appetizers: [
+export const menuItems = {
+    turkish: [
       { 
-        name: 'Hummus', 
-        turkish: 'Humus',
-        description: 'Creamy chickpea dip with tahini, olive oil, and spices',
-        price: '₺45',
-        popular: true
+        name: 'Chicken Doner Wrap', 
+        turkish: 'Tavuk Döner Dürüm',
+        description: 'Tender chicken doner wrapped in fresh lavash',
+        price: '₺270',
+        popular: true,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
       },
       { 
-        name: 'Baba Ganoush', 
-        turkish: 'Baba Ganuş',
-        description: 'Roasted eggplant puree with garlic, lemon, and herbs',
-        price: '₺48'
+        name: 'Chicken Doner Plate', 
+        turkish: 'Tavuk Döner Tabağı',
+        description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
+        price: '₺290'
       },
       { 
-        name: 'Stuffed Grape Leaves', 
-        turkish: 'Yaprak Sarma',
-        description: 'Rice-stuffed grape leaves with pine nuts and herbs',
-        price: '₺52'
+        name: 'Tantuni Wrap', 
+        turkish: 'Tantuni Dürüm',
+        description: 'Traditional spiced meat wrapped in lavash',
+        price: '₺250'
       },
       { 
-        name: 'Turkish Cheese Platter', 
-        turkish: 'Peynir Tabağı',
-        description: 'Selection of traditional Turkish cheeses with honey and nuts',
-        price: '₺65'
+        name: 'Tantuni Plate', 
+        turkish: 'Tantuni Tabağı',
+        description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
+        price: '₺290'
       },
       { 
-        name: 'Cacık', 
-        turkish: 'Cacık',
-        description: 'Yogurt dip with cucumber, garlic, mint, and olive oil',
-        price: '₺38'
+        name: 'Gözleme (Stuffed)', 
+        turkish: 'Gözleme',
+        description: 'Traditional Turkish flatbread with various fillings',
+        price: '₺150',
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      },
+      { 
+        name: 'Lahmacun', 
+        turkish: 'Lahmacun',
+        description: 'Roti with layer of chicken qeema on top with salad and yogurt',
+        price: '₺180'
+      },
+      { 
+        name: 'İskender', 
+        turkish: 'İskender',
+        description: 'Chicken slices layered with naan and yogurt',
+        price: '₺320',
+        popular: true,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      },
+      { 
+        name: 'Menemen Rice Bowl', 
+        turkish: 'Menemen Pirinç Kasesi',
+        description: 'Traditional scrambled eggs with tomatoes and peppers over rice',
+        price: '₺200'
       }
     ],
-    mains: [
+    breakfast: [
       { 
-        name: 'Ottoman Lamb Stew', 
-        turkish: 'Osmanlı Kuzu Güveç',
-        description: 'Slow-cooked lamb with vegetables in traditional clay pot',
-        price: '₺125',
+        name: 'Mushroom Omelette', 
+        turkish: 'Mantarlı Omlet',
+        description: 'Fluffy eggs cooked with fresh mushrooms',
+        price: '₺350'
+      },
+      { 
+        name: 'Mushroom & Cheese Omelette', 
+        turkish: 'Mantarlı Peynirli Omlet',
+        description: 'Classic omelette with mushrooms and melted cheese',
+        price: '₺370',
         popular: true
       },
       { 
-        name: 'Stuffed Eggplant', 
-        turkish: 'Karnıyarık',
-        description: 'Eggplant stuffed with ground meat, onions, and spices',
-        price: '₺85'
+        name: 'Kaymaklı Yumurta', 
+        turkish: 'Kaymaklı Yumurta',
+        description: 'Eggs served with rich Turkish clotted cream',
+        price: '₺380'
       },
       { 
-        name: 'Turkish Meatballs', 
-        turkish: 'Köfte',
-        description: 'Seasoned ground meat balls in rich tomato sauce',
-        price: '₺78'
+        name: 'Turkish Poached Egg (Çılbır)', 
+        turkish: 'Çılbır',
+        description: 'Poached eggs topped with garlic yogurt and chili butter',
+        price: '₺390'
       },
       { 
-        name: 'Chicken Casserole', 
-        turkish: 'Tavuk Güveç',
-        description: 'Tender chicken with vegetables in ceramic pot',
-        price: '₺88'
+        name: 'Menemen', 
+        turkish: 'Menemen',
+        description: 'Traditional scrambled eggs with tomatoes, peppers, and spices',
+        price: '₺400',
+        popular: true,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
       },
       { 
-        name: 'Imam Bayildi', 
-        turkish: 'İmam Bayıldı',
-        description: 'Eggplant stuffed with onions, garlic, and tomatoes',
-        price: '₺75'
+        name: 'Sucuklu Yumurta', 
+        turkish: 'Sucuklu Yumurta',
+        description: 'Fried eggs with spicy Turkish sausage sucuk',
+        price: '₺420'
       }
     ],
-    grills: [
+    salads: [
       { 
-        name: 'Mixed Grill Platter', 
-        turkish: 'Karışık Izgara',
-        description: 'Assorted grilled meats: lamb, chicken, and beef kebabs',
-        price: '₺165',
-        popular: true
+        name: 'Turkish Special Salad', 
+        turkish: 'Türk Özel Salata',
+        description: 'Cherry tomatoes, onion, cucumber, chickpeas, yogurt, cheese, mushroom',
+        price: '₺280',
+        popular: true,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
       },
       { 
-        name: 'Adana Kebab', 
-        turkish: 'Adana Kebap',
-        description: 'Spicy ground lamb on skewers, grilled over charcoal',
-        price: '₺95'
+        name: 'Greek Salad', 
+        turkish: 'Yunan Salatası',
+        description: 'Cucumbers, tomatoes, green bell pepper, cheese, vinegar/lemon juice, black pepper',
+        price: '₺250'
       },
       { 
-        name: 'Chicken Shish', 
-        turkish: 'Tavuk Şiş',
-        description: 'Marinated chicken cubes grilled to perfection',
-        price: '₺85'
+        name: 'Pasta Salad', 
+        turkish: 'Makarna Salatası',
+        description: 'Vegetables, pasta, mayonnaise, milk cream',
+        price: '₺230'
       },
       { 
-        name: 'Lamb Chops', 
-        turkish: 'Kuzu Pirzola',
-        description: 'Tender lamb chops seasoned with Turkish herbs',
-        price: '₺145'
-      },
-      { 
-        name: 'Fish Kebab', 
-        turkish: 'Balık Şiş',
-        description: 'Fresh fish cubes marinated in lemon and herbs',
-        price: '₺115'
+        name: 'Chicken Salad', 
+        turkish: 'Tavuk Salatası',
+        description: 'Sliced chicken, vegetables, mayonnaise or Greek yogurt',
+        price: '₺300'
       }
     ],
-    desserts: [
+    drinks: [
       { 
-        name: 'Baklava', 
-        turkish: 'Baklava',
-        description: 'Layers of phyllo pastry with nuts and honey syrup',
-        price: '₺42',
+        name: 'Turkish Chai', 
+        turkish: 'Türk Çayı',
+        description: 'Traditional Turkish black tea served in crystal glasses',
+        price: '₺25'
+      },
+      { 
+        name: 'Hot Kiwi Turkish Drink', 
+        turkish: 'Sıcak Kivi İçeceği',
+        description: 'Warm and refreshing kiwi flavored Turkish drink',
+        price: '₺60',
         popular: true
       },
       { 
-        name: 'Turkish Delight', 
-        turkish: 'Lokum',
-        description: 'Traditional soft confection in various flavors',
-        price: '₺35'
-      },
-      { 
-        name: 'Rice Pudding', 
-        turkish: 'Sütlaç',
-        description: 'Creamy rice pudding topped with cinnamon',
-        price: '₺38'
-      },
-      { 
-        name: 'Künefe', 
-        turkish: 'Künefe',
-        description: 'Shredded phyllo pastry with cheese and syrup',
-        price: '₺55'
-      },
-      { 
-        name: 'Turkish Coffee Ice Cream', 
-        turkish: 'Türk Kahvesi Dondurması',
-        description: 'Rich ice cream flavored with authentic Turkish coffee',
-        price: '₺45'
-      }
-    ],
-    beverages: [
-      { 
-        name: 'Turkish Tea', 
-        turkish: 'Çay',
-        description: 'Traditional black tea served in crystal glasses',
-        price: '₺15'
-      },
-      { 
-        name: 'Turkish Coffee', 
-        turkish: 'Türk Kahvesi',
-        description: 'Finely ground coffee cooked in traditional pot',
-        price: '₺25',
-        popular: true
-      },
-      { 
-        name: 'Ayran', 
-        turkish: 'Ayran',
-        description: 'Refreshing yogurt drink with salt',
-        price: '₺18'
-      },
-      { 
-        name: 'Pomegranate Juice', 
-        turkish: 'Nar Suyu',
-        description: 'Fresh pressed pomegranate juice',
-        price: '₺28'
-      },
-      { 
-        name: 'Apple Tea', 
-        turkish: 'Elma Çayı',
-        description: 'Aromatic apple-flavored herbal tea',
-        price: '₺20'
+        name: 'Hot Orange Turkish Drink', 
+        turkish: 'Sıcak Portakal İçeceği',
+        description: 'Traditional hot orange flavored Turkish beverage',
+        price: '₺60',
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
       }
     ]
+  }
+
+const Menu = () => {
+  const [activeCategory, setActiveCategory] = useState('turkish')
+
+  const categories = [
+    { id: 'turkish', name: 'Special Turkish Items', turkish: 'Özel Türk Yemekleri' },
+    { id: 'breakfast', name: 'Breakfast', turkish: 'Kahvaltı' },
+    { id: 'salads', name: 'Salads', turkish: 'Salatalar' },
+    { id: 'drinks', name: 'Drinks', turkish: 'İçecekler' }
+  ]
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   return (
@@ -254,7 +247,10 @@ const Menu = () => {
             Reserve your table now and embark on a culinary journey through the flavors of Turkey. 
             Our chefs are waiting to serve you an unforgettable dining experience.
           </p>
-          <button className="btn-primary text-lg px-8 py-4">
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="btn-primary text-lg px-8 py-4"
+          >
             Make a Reservation
           </button>
         </div>
@@ -264,3 +260,4 @@ const Menu = () => {
 }
 
 export default Menu
+

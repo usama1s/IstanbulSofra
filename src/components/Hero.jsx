@@ -1,4 +1,5 @@
 import React from 'react'
+import { menuItems } from './Menu'
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -7,6 +8,27 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
+
+  // Get all featured items from menu
+  const getFeaturedItems = () => {
+    const featured = []
+    Object.values(menuItems).forEach(category => {
+      category.forEach(item => {
+        if (item.featured) {
+          featured.push({
+            type: 'dish',
+            name: item.name,
+            turkish: item.turkish,
+            image: item.image,
+            price: item.price,
+            description: item.description
+          })
+        }
+      })
+    })
+    return featured
+  }
+
   const slides = [
     { 
       type: 'restaurant',
@@ -14,30 +36,7 @@ const Hero = () => {
       subtitle: 'Authentic Turkish Restaurant',
       image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     },
-    { 
-      type: 'dish',
-      name: 'Adana Kebab', 
-      turkish: 'Adana Kebap', 
-      image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    },
-    { 
-      type: 'dish',
-      name: 'Baklava', 
-      turkish: 'Baklava', 
-      image: 'https://images.unsplash.com/photo-1571197119049-cdba2770db8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    },
-    { 
-      type: 'dish',
-      name: 'Turkish Delight', 
-      turkish: 'Lokum', 
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    },
-    { 
-      type: 'dish',
-      name: 'Turkish Coffee', 
-      turkish: 'Türk Kahvesi', 
-      image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    }
+    ...getFeaturedItems()
   ]
 
   return (
@@ -50,13 +49,16 @@ const Hero = () => {
         <div className="floating-elements absolute bottom-20 right-40 w-24 h-24 border border-white/15 rounded-full" style={{animationDelay: '1s'}}></div>
       </div>
 
-      <div className="carousel-slides flex w-[500%] h-full">
-        {slides.map((slide, index) => (
-          <div 
-            key={index} 
-            className="w-1/5 h-full relative bg-cover bg-center bg-no-repeat transition-all duration-1000"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
+          <div className="carousel-slides flex h-full" style={{ width: `${slides.length * 100}%` }}>
+            {slides.map((slide, index) => (
+              <div 
+                key={index} 
+                className="h-full relative bg-cover bg-center bg-no-repeat transition-all duration-1000 flex-shrink-0"
+                style={{ 
+                  backgroundImage: `url(${slide.image})`,
+                  width: `${100 / slides.length}%`
+                }}
+              >
             {/* Enhanced gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/40 z-10"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 z-10"></div>
@@ -90,18 +92,32 @@ const Hero = () => {
               </div>
             )}
             
-            {/* Dish slides content - bottom left corner */}
-            {slide.type === 'dish' && (
-              <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 text-white bg-black/80 backdrop-blur-md rounded-2xl p-6 md:p-8 transform hover:scale-105 transition-all duration-300 border border-white/20" style={{zIndex: 70}}>
-                <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white drop-shadow-2xl">
-                  {slide.name}
-                </h3>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-transparent mb-3"></div>
-                <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl">
-                  {slide.turkish}
-                </p>
-              </div>
-            )}
+                {/* Dish slides content - bottom left corner */}
+                {slide.type === 'dish' && (
+                  <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 text-white bg-black/80 backdrop-blur-md rounded-2xl p-6 md:p-8 transform hover:scale-105 transition-all duration-300 border border-white/20" style={{zIndex: 70}}>
+                    <div className="flex justify-between items-start mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white drop-shadow-2xl">
+                          {slide.name}
+                        </h3>
+                      </div>
+                      {slide.price && (
+                        <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-red-400 ml-4 drop-shadow-xl">
+                          {slide.price}
+                        </span>
+                      )}
+                    </div>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-transparent mb-3"></div>
+                    <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl mb-2">
+                      {slide.turkish}
+                    </p>
+                    {slide.description && (
+                      <p className="text-white/90 text-sm md:text-base lg:text-lg drop-shadow-lg max-w-md">
+                        {slide.description}
+                      </p>
+                    )}
+                  </div>
+                )}
 
             {/* Additional visual elements for each slide */}
             <div className="absolute top-1/4 right-8 md:right-16 z-15 opacity-20">
@@ -112,20 +128,20 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Bottom progress indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2" style={{zIndex: 65}}>
-        {slides.map((_, index) => (
-          <div key={index} className="w-8 h-1 bg-white/30 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-red-500 rounded-full animate-pulse"
-              style={{
-                animationDelay: `${index * 6}s`,
-                animationDuration: '30s'
-              }}
-            ></div>
+          {/* Bottom progress indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2" style={{zIndex: 65}}>
+            {slides.map((_, index) => (
+              <div key={index} className="w-8 h-1 bg-white/30 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-red-500 rounded-full animate-pulse"
+                  style={{
+                    animationDelay: `${index * 6}s`,
+                    animationDuration: '42s'
+                  }}
+                ></div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
     </section>
   )
 }
