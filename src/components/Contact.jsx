@@ -8,24 +8,24 @@ const Contact = () => {
       icon: <MapPin className="text-red-600" size={24} />,
       title: "Address",
       details: [
-        "Sultanahmet District",
-        "Istanbul, Turkey 34110"
+        "Food Court, Capital University",
+        "Islamabad, Pakistan"
       ]
     },
     {
       icon: <Phone className="text-red-600" size={24} />,
       title: "Phone",
       details: [
-        "+90 212 555 0123",
-        "+90 212 555 0124"
+        "+92 51 555 0123",
+        "+92 51 555 0124"
       ]
     },
     {
       icon: <Mail className="text-red-600" size={24} />,
-      title: "Email",
+      title: "Website",
       details: [
-        "info@istanbulsofra.com",
-        "reservations@istanbulsofra.com"
+        "istanbulsofra.pk",
+        "info@istanbulsofra.pk"
       ]
     },
     {
@@ -33,7 +33,7 @@ const Contact = () => {
       title: "Hours",
       details: [
         "Monday - Sunday",
-        "11:00 AM - 11:00 PM"
+        "8:00 AM - 7:00 PM"
       ]
     }
   ]
@@ -48,7 +48,7 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-lg text-slate-200 max-w-3xl mx-auto">
-            We're located in the heart of Istanbul's historic district. 
+            We're located in the food court of Capital University, Islamabad. 
             Come experience authentic Turkish hospitality and cuisine.
           </p>
         </div>
@@ -78,7 +78,7 @@ const Contact = () => {
             <div className="text-center text-slate-200">
               <MapPin size={60} className="mx-auto mb-4 opacity-50 text-red-400" />
               <p className="text-lg font-semibold">Interactive Map</p>
-              <p className="text-sm mt-2 opacity-75">Sultanahmet, Istanbul</p>
+              <p className="text-sm mt-2 opacity-75">Capital University, Islamabad</p>
             </div>
           </div>
         </div>
