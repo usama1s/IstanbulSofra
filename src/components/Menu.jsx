@@ -10,39 +10,45 @@ export const menuItems = {
         price: '₺270',
         popular: true,
         featured: true,
-        image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        image: '/src/images/Chicken-Doner-Wrap.webp'
       },
       { 
-        name: 'Chicken Doner Plate', 
+        name: 'Chicken Doner Plater', 
         turkish: 'Tavuk Döner Tabağı',
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
-        price: '₺290'
+        price: '₺290',
+        featured: true,
+        image: '/src/images/Chicken-Doner-Platter.jpg'
       },
       { 
         name: 'Tantuni Wrap', 
         turkish: 'Tantuni Dürüm',
         description: 'Traditional spiced meat wrapped in lavash',
-        price: '₺250'
+        price: '₺250',
+        featured: true,
+        image: '/src/images/Chicken-Tantuni-Wrap.jpg'
       },
       { 
-        name: 'Tantuni Plate', 
+        name: 'Tantuni Plater', 
         turkish: 'Tantuni Tabağı',
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
-        price: '₺290'
+        price: '₺290',
+        featured: true,
+        image: '/src/images/Chicken-Tantuni-Platter.avif'
       },
       { 
         name: 'Gözleme (Stuffed)', 
         turkish: 'Gözleme',
         description: 'Traditional Turkish flatbread with various fillings',
-        price: '₺150',
-        featured: true,
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        price: '₺150'
       },
       { 
         name: 'Lahmacun', 
         turkish: 'Lahmacun',
         description: 'Roti with layer of chicken qeema on top with salad and yogurt',
-        price: '₺180'
+        price: '₺180',
+        featured: true,
+        image: '/src/images/Lahmacun.webp'
       },
       { 
         name: 'İskender', 
@@ -51,7 +57,7 @@ export const menuItems = {
         price: '₺320',
         popular: true,
         featured: true,
-        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        image: '/images/Iskender.jpg'
       },
       { 
         name: 'Menemen Rice Bowl', 
@@ -92,8 +98,7 @@ export const menuItems = {
         description: 'Traditional scrambled eggs with tomatoes, peppers, and spices',
         price: '₺400',
         popular: true,
-        featured: true,
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        featured: false,
       },
       { 
         name: 'Sucuklu Yumurta', 
@@ -109,8 +114,7 @@ export const menuItems = {
         description: 'Cherry tomatoes, onion, cucumber, chickpeas, yogurt, cheese, mushroom',
         price: '₺280',
         popular: true,
-        featured: true,
-        image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        featured: false,
       },
       { 
         name: 'Greek Salad', 
@@ -150,8 +154,7 @@ export const menuItems = {
         turkish: 'Sıcak Portakal İçeceği',
         description: 'Traditional hot orange flavored Turkish beverage',
         price: '₺60',
-        featured: true,
-        image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        featured: false,
       }
     ]
   }

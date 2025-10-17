@@ -34,7 +34,7 @@ const Hero = () => {
       type: 'restaurant',
       name: 'Istanbul Sofra', 
       subtitle: 'Authentic Turkish Restaurant',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: '/src/images/Istanbul-Sofra.jpeg'
     },
     ...getFeaturedItems()
   ]
