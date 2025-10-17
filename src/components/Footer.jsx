@@ -14,8 +14,7 @@ const Footer = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Menu', href: '#menu' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Reservations', href: '#contact' }
+    { name: 'Contact', href: '#contact' }
   ]
 
   return (
@@ -28,9 +27,9 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <h3 className="text-2xl font-bold mb-6">Istanbul Sofra</h3>
               <p className="text-slate-300 mb-6 leading-relaxed">
-                Experience the authentic flavors of Turkish cuisine in the heart of Istanbul. 
-                We've been serving traditional dishes with modern hospitality since 1998, 
-                creating memorable dining experiences for locals and visitors alike.
+                Experience the authentic flavors of Turkish cuisine at Capital University of Science and Technology. 
+                We serve traditional dishes with modern hospitality in our university food court, 
+                creating memorable dining experiences for students, faculty, and visitors.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
@@ -70,23 +69,23 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="text-red-400 mt-1 flex-shrink-0" size={18} />
                   <div className="text-slate-300">
-                    <p>Sultanahmet District</p>
-                    <p>Istanbul, Turkey 34110</p>
+                    <p>Food Court, Capital University of Science and Technology</p>
+                    <p>Islamabad, Pakistan</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="text-red-400 flex-shrink-0" size={18} />
-                  <p className="text-slate-300">+90 212 555 0123</p>
+                  <p className="text-slate-300">+92 312 555 0123</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="text-red-400 flex-shrink-0" size={18} />
-                  <p className="text-slate-300">info@istanbulsofra.com</p>
+                  <p className="text-slate-300">info@istanbulsofra.pk</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Clock className="text-red-400 mt-1 flex-shrink-0" size={18} />
                   <div className="text-slate-300">
-                    <p>Monday - Sunday</p>
-                    <p>11:00 AM - 11:00 PM</p>
+                    <p>Monday - Saturday</p>
+                    <p>8:00 AM - 7:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -124,7 +123,7 @@ const Footer = () => {
             <div className="flex items-center space-x-1 text-slate-400 text-sm mt-4 md:mt-0">
               <span>Made with</span>
               <Heart className="text-red-500 fill-current" size={16} />
-              <span>in Istanbul</span>
+              <span>in Islamabad</span>
             </div>
           </div>
         </div>

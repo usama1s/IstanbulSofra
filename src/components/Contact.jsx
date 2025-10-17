@@ -6,33 +6,27 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="text-red-600" size={24} />,
-      title: "Address",
       details: [
-        "Food Court, Capital University",
+        "Food Court, Capital University of Science and Technology",
         "Islamabad, Pakistan"
       ]
     },
     {
       icon: <Phone className="text-red-600" size={24} />,
-      title: "Phone",
       details: [
-        "+92 51 555 0123",
-        "+92 51 555 0124"
+        "+92 312 555 0123"
       ]
     },
     {
       icon: <Mail className="text-red-600" size={24} />,
-      title: "Website",
       details: [
-        "istanbulsofra.pk",
         "info@istanbulsofra.pk"
       ]
     },
     {
       icon: <Clock className="text-red-600" size={24} />,
-      title: "Hours",
       details: [
-        "Monday - Sunday",
+        "Monday - Saturday",
         "8:00 AM - 7:00 PM"
       ]
     }
@@ -48,7 +42,7 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-lg text-slate-200 max-w-3xl mx-auto">
-            We're located in the food court of Capital University, Islamabad. 
+            We're located in the food court of Capital University of Science and Technology, Islamabad. 
             Come experience authentic Turkish hospitality and cuisine.
           </p>
         </div>
@@ -61,11 +55,8 @@ const Contact = () => {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   {info.icon}
                 </div>
-                <h4 className="font-semibold text-slate-100 mb-3 text-lg">
-                  {info.title}
-                </h4>
                 {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-slate-200 text-sm">
+                  <p key={idx} className="text-slate-200 text-sm mb-1">
                     {detail}
                   </p>
                 ))}
@@ -78,7 +69,7 @@ const Contact = () => {
             <div className="text-center text-slate-200">
               <MapPin size={60} className="mx-auto mb-4 opacity-50 text-red-400" />
               <p className="text-lg font-semibold">Interactive Map</p>
-              <p className="text-sm mt-2 opacity-75">Capital University, Islamabad</p>
+              <p className="text-sm mt-2 opacity-75">Capital University of Science and Technology, Islamabad</p>
             </div>
           </div>
         </div>
