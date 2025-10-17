@@ -18,7 +18,7 @@ export const menuItems = {
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
         price: '₺290',
         featured: true,
-        image: '/src/images/Chicken-Doner-Platter.jpg'
+        image: '/src/images/Chicken-Doner-Platter.png'
       },
       { 
         name: 'Tantuni Wrap', 
@@ -57,7 +57,7 @@ export const menuItems = {
         price: '₺320',
         popular: true,
         featured: true,
-        image: '/images/Iskender.jpg'
+        image: '/src/images/Iskender.jpg'
       },
       { 
         name: 'Menemen Rice Bowl', 
