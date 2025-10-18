@@ -50,6 +50,21 @@
 .custom-dots li.slick-active button:before {
   color: white !important;
 }
+.slick-slide{
+  overflow: hidden;
+}
+
+/* Continuous zoom animation for background images */
+@keyframes imageZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.zoom-image {
+  animation: imageZoom 6s ease-in-out infinite;
+  transform-origin: center center;
+}
 
 /* Original carousel animation - 7 slides with smooth transitions */
 @keyframes slideshow {

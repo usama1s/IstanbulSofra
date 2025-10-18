@@ -31,7 +31,7 @@ const NewHero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // 3 seconds display time
+    autoplaySpeed: 5000, // 5 seconds display time
     fade: false,
     cssEase: "ease-in-out",
     pauseOnHover: false,
@@ -47,7 +47,7 @@ const NewHero = () => {
             <div className="h-full bg-black flex items-center justify-center relative">
               {/* Background image div */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 zoom-image"
                 style={{ backgroundImage: `url(${dish.image})` }}
               ></div>
               
