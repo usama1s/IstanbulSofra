@@ -104,7 +104,7 @@ const NewHero = () => {
             
             {/* Centered content */}
             <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-8 mt-10">
-              <p className="text-xl md:text-2xl lg:text-3xl font-light mb-8 text-gray-200 drop-shadow-xl leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-3xl font-semibold mb-8 text-gray-200 drop-shadow-xl leading-relaxed">
                 Authentic Turkish Cuisine
               </p>
               {!isFullscreen && (
