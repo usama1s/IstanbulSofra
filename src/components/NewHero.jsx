@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import { menuItems } from './Menu'
+import { Maximize, Minimize } from 'lucide-react'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const NewHero = () => {
+  const [isFullscreen, setIsFullscreen] = useState(false)
+
   // Get all featured dishes from menu
   const getFeaturedDishes = () => {
     const featured = []
@@ -14,7 +17,8 @@ const NewHero = () => {
           featured.push({
             name: item.name,
             turkish: item.turkish,
-            image: item.image
+            image: item.image,
+            price: item.price
           })
         }
       })
@@ -29,6 +33,31 @@ const NewHero = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
+
+  const toggleFullscreen = () => {
+    const element = document.getElementById('hero-slider')
+    
+    if (!isFullscreen) {
+      // Enter fullscreen
+      if (element.requestFullscreen) {
+        element.requestFullscreen()
+      } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen()
+      } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen()
+      }
+    } else {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen()
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
+      }
+    }
+    setIsFullscreen(!isFullscreen)
   }
 
   const settings = {
@@ -47,7 +76,16 @@ const NewHero = () => {
   }
 
   return (
-    <section className="w-full h-screen bg-black">
+    <section id="hero-slider" className="w-full h-screen bg-black relative">
+      {/* Fullscreen Button */}
+      <button
+        onClick={toggleFullscreen}
+        className="absolute bottom-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-lg transition-all duration-300 backdrop-blur-sm"
+        title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+      >
+        {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
+      </button>
+      
       <Slider {...settings} className="h-full">
         {/* Istanbul Sofra Main Slide */}
         <div key="istanbul-sofra" className="h-screen">
@@ -69,12 +107,14 @@ const NewHero = () => {
               <p className="text-xl md:text-2xl lg:text-3xl font-light mb-8 text-gray-200 drop-shadow-xl leading-relaxed">
                 Authentic Turkish Cuisine
               </p>
-              <button 
-                onClick={scrollToMenu}
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                View Menu
-              </button>
+              {!isFullscreen && (
+                <button 
+                  onClick={scrollToMenu}
+                  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  View Menu
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -102,6 +142,11 @@ const NewHero = () => {
                 <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl">
                   {dish.turkish}
                 </p>
+                {isFullscreen && dish.price && (
+                  <p className="text-yellow-400 text-xl md:text-3xl lg:text-4xl font-bold mt-4 drop-shadow-xl">
+                    {dish.price}
+                  </p>
+                )}
               </div>
             </div>
           </div>
