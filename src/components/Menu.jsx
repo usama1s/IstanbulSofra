@@ -10,7 +10,7 @@ export const menuItems = {
         price: 270,
         popular: true,
         featured: true,
-        image: '/src/images/Chicken-Doner-Wrap.webp'
+            image: '/images/Chicken-Doner-Wrap.webp'
       },
       { 
         name: 'Chicken Doner Plater', 
@@ -18,7 +18,7 @@ export const menuItems = {
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
         price: 290,
         featured: true,
-        image: '/src/images/Chicken-Doner-Platter.png'
+        image: '/images/Chicken-Doner-Platter.png'
       },
       { 
         name: 'Tantuni Wrap', 
@@ -26,7 +26,7 @@ export const menuItems = {
         description: 'Traditional spiced meat wrapped in lavash',
         price: 250,
         featured: true,
-        image: '/src/images/Chicken-Tantuni-Wrap.jpg'
+        image: '/images/Chicken-Tantuni-Wrap.jpg'
       },
       { 
         name: 'Tantuni Plater', 
@@ -34,7 +34,7 @@ export const menuItems = {
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
         price: 290,
         featured: true,
-        image: '/src/images/Chicken-Tantuni-Platter.avif'
+        image: '/images/Chicken-Tantuni-Platter.avif'
       },
       { 
         name: 'Gözleme (Stuffed)', 
@@ -48,7 +48,7 @@ export const menuItems = {
         description: 'Roti with layer of chicken qeema on top with salad and yogurt',
         price: 180,
         featured: true,
-        image: '/src/images/Lahmacun.webp'
+        image: '/images/Lahmacun.webp'
       },
       { 
         name: 'İskender', 
@@ -57,7 +57,7 @@ export const menuItems = {
         price: 320,
         popular: true,
         featured: true,
-        image: '/src/images/Iskender.jpg'
+        image: '/images/Iskender.jpg'
       },
       { 
         name: 'Menemen Rice Bowl', 

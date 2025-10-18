@@ -93,7 +93,7 @@ const NewHero = () => {
             {/* Background image div */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 zoom-image"
-              style={{ backgroundImage: `url(/src/images/Istanbul-Sofra.jpeg)` }}
+              style={{ backgroundImage: `url(/images/Istanbul-Sofra.jpeg)` }}
             ></div>
             
             {/* Dark overlay */}
