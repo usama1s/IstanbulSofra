@@ -10,12 +10,11 @@ const Footer = () => {
     { icon: <Twitter size={20} />, href: '#', name: 'Twitter' }
   ]
 
-  const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Menu', href: '#menu' },
-    { name: 'Contact', href: '#contact' }
-  ]
+      const quickLinks = [
+        { name: 'Home', href: '#home' },
+        { name: 'Menu', href: '#menu' },
+        { name: 'Contact', href: '#contact' }
+      ]
 
   return (
     <footer className="bg-black text-white">

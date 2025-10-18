@@ -68,8 +68,23 @@
 .custom-dots li.slick-active button {
   background-color: #ef4444 !important; /* red-500 */
 }
-.slick-slide{
-  overflow: hidden;
+
+/* Fix slider gaps and ensure full coverage */
+.slick-slide {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.slick-slide > div {
+  height: 100% !important;
+}
+
+.slick-list {
+  height: 100% !important;
+}
+
+.slick-track {
+  height: 100% !important;
 }
 
 /* Continuous zoom animation for background images */
