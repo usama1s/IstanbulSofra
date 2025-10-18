@@ -64,12 +64,33 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Map Placeholder */}
-          <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-8 h-64 flex items-center justify-center border border-slate-600">
-            <div className="text-center text-slate-200">
-              <MapPin size={60} className="mx-auto mb-4 opacity-50 text-red-400" />
-              <p className="text-lg font-semibold">Interactive Map</p>
-              <p className="text-sm mt-2 opacity-75">Capital University of Science and Technology, Islamabad</p>
+          {/* Feedback QR Code Section */}
+          <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-8 border border-slate-600">
+            <div className="text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-100 mb-4">
+                Share Your Feedback
+              </h3>
+              <p className="text-slate-200 mb-6 max-w-2xl mx-auto">
+                We value your opinion! Scan the QR code below to share your experience with us.
+              </p>
+              <a 
+                href="https://forms.gle/WA4kKaUbfpaQT1bM6" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block transition-transform duration-300 hover:scale-105"
+              >
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+                  {/* Replace the src with your QR code image path */}
+                  <img 
+                    src="/src/images/feedback-QR.png" 
+                    alt="Feedback QR Code" 
+                    className="w-48 h-48 md:w-64 md:h-64 mx-auto"
+                  />
+                </div>
+              </a>
+              <p className="text-slate-300 mt-4 text-sm">
+                Scan or click the QR code to leave feedback
+              </p>
             </div>
           </div>
         </div>
