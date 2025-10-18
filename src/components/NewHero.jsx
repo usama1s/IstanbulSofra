@@ -24,6 +24,13 @@ const NewHero = () => {
 
   const dishes = getFeaturedDishes()
 
+  const scrollToMenu = () => {
+    const element = document.getElementById('menu')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const settings = {
     dots: true,
     infinite: true,
@@ -42,6 +49,35 @@ const NewHero = () => {
   return (
     <section className="w-full h-screen bg-black">
       <Slider {...settings} className="h-full">
+        {/* Istanbul Sofra Main Slide */}
+        <div key="istanbul-sofra" className="h-screen">
+          <div className="h-full bg-black flex items-center justify-center relative">
+            {/* Background image div */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 zoom-image"
+              style={{ backgroundImage: `url(/src/images/Istanbul-Sofra.jpeg)` }}
+            ></div>
+            
+            {/* Dark overlay */}
+            <div 
+              className="absolute inset-0 z-10"
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }}
+            ></div>
+            
+            {/* Centered content */}
+            <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-8 mt-10">
+              <p className="text-xl md:text-2xl lg:text-3xl font-light mb-8 text-gray-200 drop-shadow-xl leading-relaxed">
+                Authentic Turkish Cuisine
+              </p>
+              <button 
+                onClick={scrollToMenu}
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                View Menu
+              </button>
+            </div>
+          </div>
+        </div>
         {dishes.map((dish, index) => (
           <div key={index} className="h-screen">
             <div className="h-full bg-black flex items-center justify-center relative">
