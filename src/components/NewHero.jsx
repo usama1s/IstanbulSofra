@@ -46,12 +46,17 @@ const NewHero = () => {
             <div className="h-full bg-black flex items-center justify-center relative">
               {/* Background image div */}
               <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
                 style={{ backgroundImage: `url(${dish.image})` }}
               ></div>
               
-              {/* Dish title */}
-              <h2 className="text-white text-6xl font-bold text-center relative z-10 drop-shadow-2xl">
+              {/* Dark overlay */}
+              <div 
+                className="absolute inset-0 z-10"
+                style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+              ></div>
+              
+              <h2 className="text-white text-6xl font-bold text-center relative z-20 drop-shadow-2xl">
                 {dish.name}
               </h2>
             </div>
