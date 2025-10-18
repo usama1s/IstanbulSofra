@@ -34,17 +34,19 @@ const Header = () => {
       }`}>
         <nav className="container-custom">
           <div className="flex justify-between items-center">
-            {/* Logo */}
-            <div className="flex items-center">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className={`text-2xl font-bold transition-colors duration-300 ${
-                  isScrolled ? 'text-primary-100' : 'text-white'
-                }`}
-              >
-                Istanbul Sofra
-              </button>
-            </div>
+                {/* Logo */}
+                <div className="flex items-center">
+                  <button 
+                    onClick={() => scrollToSection('home')}
+                    className="transition-opacity duration-300 hover:opacity-80"
+                  >
+                    <img 
+                      src="/images/Istanbul-Sofra-White-Logo.png" 
+                      alt="Istanbul Sofra" 
+                      className="h-12 md:h-16 w-auto object-contain"
+                    />
+                  </button>
+                </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
