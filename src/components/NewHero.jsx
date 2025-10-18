@@ -142,11 +142,11 @@ const NewHero = () => {
                 <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl">
                   {dish.turkish}
                 </p>
-                {isFullscreen && dish.price && (
-                  <p className="text-yellow-400 text-xl md:text-3xl lg:text-4xl font-bold mt-4 drop-shadow-xl">
-                    {dish.price}
-                  </p>
-                )}
+                  {isFullscreen && dish.price && (
+                    <p className="text-yellow-400 text-xl md:text-3xl lg:text-4xl font-bold mt-4 drop-shadow-xl">
+                     ₨{dish.price}
+                    </p>
+                  )}
               </div>
             </div>
           </div>

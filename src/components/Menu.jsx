@@ -7,7 +7,7 @@ export const menuItems = {
         name: 'Chicken Doner Wrap', 
         turkish: 'Tavuk Döner Dürüm',
         description: 'Tender chicken doner wrapped in fresh lavash',
-        price: '₺270',
+        price: 270,
         popular: true,
         featured: true,
         image: '/src/images/Chicken-Doner-Wrap.webp'
@@ -16,7 +16,7 @@ export const menuItems = {
         name: 'Chicken Doner Plater', 
         turkish: 'Tavuk Döner Tabağı',
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
-        price: '₺290',
+        price: 290,
         featured: true,
         image: '/src/images/Chicken-Doner-Platter.png'
       },
@@ -24,7 +24,7 @@ export const menuItems = {
         name: 'Tantuni Wrap', 
         turkish: 'Tantuni Dürüm',
         description: 'Traditional spiced meat wrapped in lavash',
-        price: '₺250',
+        price: 250,
         featured: true,
         image: '/src/images/Chicken-Tantuni-Wrap.jpg'
       },
@@ -32,7 +32,7 @@ export const menuItems = {
         name: 'Tantuni Plater', 
         turkish: 'Tantuni Tabağı',
         description: 'Salad, sauce, chicken, fries, rice, and yogurt, mashed flavoured potatoes',
-        price: '₺290',
+        price: 290,
         featured: true,
         image: '/src/images/Chicken-Tantuni-Platter.avif'
       },
@@ -40,13 +40,13 @@ export const menuItems = {
         name: 'Gözleme (Stuffed)', 
         turkish: 'Gözleme',
         description: 'Traditional Turkish flatbread with various fillings',
-        price: '₺150'
+        price: 150
       },
       { 
         name: 'Lahmacun', 
         turkish: 'Lahmacun',
         description: 'Roti with layer of chicken qeema on top with salad and yogurt',
-        price: '₺180',
+        price: 180,
         featured: true,
         image: '/src/images/Lahmacun.webp'
       },
@@ -54,7 +54,7 @@ export const menuItems = {
         name: 'İskender', 
         turkish: 'İskender',
         description: 'Chicken slices layered with naan and yogurt',
-        price: '₺320',
+        price: 320,
         popular: true,
         featured: true,
         image: '/src/images/Iskender.jpg'
@@ -63,7 +63,7 @@ export const menuItems = {
         name: 'Menemen Rice Bowl', 
         turkish: 'Menemen Pirinç Kasesi',
         description: 'Traditional scrambled eggs with tomatoes and peppers over rice',
-        price: '₺200'
+        price: 200
       }
     ],
     breakfast: [
@@ -71,40 +71,40 @@ export const menuItems = {
         name: 'Mushroom Omelette', 
         turkish: 'Mantarlı Omlet',
         description: 'Fluffy eggs cooked with fresh mushrooms',
-        price: '₺350'
+        price: 350
       },
       { 
         name: 'Mushroom & Cheese Omelette', 
         turkish: 'Mantarlı Peynirli Omlet',
         description: 'Classic omelette with mushrooms and melted cheese',
-        price: '₺370',
+        price: 370,
         popular: true
       },
       { 
         name: 'Kaymaklı Yumurta', 
         turkish: 'Kaymaklı Yumurta',
         description: 'Eggs served with rich Turkish clotted cream',
-        price: '₺380'
+        price: 380
       },
       { 
         name: 'Turkish Poached Egg (Çılbır)', 
         turkish: 'Çılbır',
         description: 'Poached eggs topped with garlic yogurt and chili butter',
-        price: '₺390'
+        price: 390
       },
       { 
         name: 'Menemen', 
         turkish: 'Menemen',
         description: 'Traditional scrambled eggs with tomatoes, peppers, and spices',
-        price: '₺400',
+        price: 400,
         popular: true,
-        featured: false,
+        featured: false
       },
       { 
         name: 'Sucuklu Yumurta', 
         turkish: 'Sucuklu Yumurta',
         description: 'Fried eggs with spicy Turkish sausage sucuk',
-        price: '₺420'
+        price: 420
       }
     ],
     salads: [
@@ -112,27 +112,27 @@ export const menuItems = {
         name: 'Turkish Special Salad', 
         turkish: 'Türk Özel Salata',
         description: 'Cherry tomatoes, onion, cucumber, chickpeas, yogurt, cheese, mushroom',
-        price: '₺280',
+        price: 280,
         popular: true,
-        featured: false,
+        featured: false
       },
       { 
         name: 'Greek Salad', 
         turkish: 'Yunan Salatası',
         description: 'Cucumbers, tomatoes, green bell pepper, cheese, vinegar/lemon juice, black pepper',
-        price: '₺250'
+        price: 250
       },
       { 
         name: 'Pasta Salad', 
         turkish: 'Makarna Salatası',
         description: 'Vegetables, pasta, mayonnaise, milk cream',
-        price: '₺230'
+        price: 230
       },
       { 
         name: 'Chicken Salad', 
         turkish: 'Tavuk Salatası',
         description: 'Sliced chicken, vegetables, mayonnaise or Greek yogurt',
-        price: '₺300'
+        price: 300
       }
     ],
     drinks: [
@@ -140,21 +140,21 @@ export const menuItems = {
         name: 'Turkish Chai', 
         turkish: 'Türk Çayı',
         description: 'Traditional Turkish black tea served in crystal glasses',
-        price: '₺25'
+        price: 25
       },
       { 
         name: 'Hot Kiwi Turkish Drink', 
         turkish: 'Sıcak Kivi İçeceği',
         description: 'Warm and refreshing kiwi flavored Turkish drink',
-        price: '₺60',
+        price: 60,
         popular: true
       },
       { 
         name: 'Hot Orange Turkish Drink', 
         turkish: 'Sıcak Portakal İçeceği',
         description: 'Traditional hot orange flavored Turkish beverage',
-        price: '₺60',
-        featured: false,
+        price: 60,
+        featured: false
       }
     ]
   }
@@ -231,7 +231,7 @@ const Menu = () => {
                   </p>
                 </div>
                 <span className="text-2xl font-bold text-red-500 ml-4">
-                  {item.price}
+                  ₨{item.price}
                 </span>
               </div>
               <p className="text-slate-200 leading-relaxed">
@@ -247,4 +247,3 @@ const Menu = () => {
 }
 
 export default Menu
-
