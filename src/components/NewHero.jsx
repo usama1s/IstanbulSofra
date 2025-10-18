@@ -13,6 +13,7 @@ const NewHero = () => {
         if (item.featured && item.image) {
           featured.push({
             name: item.name,
+            turkish: item.turkish,
             image: item.image
           })
         }
@@ -56,9 +57,16 @@ const NewHero = () => {
                 style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
               ></div>
               
-              <h2 className="text-white text-6xl font-bold text-center relative z-20 drop-shadow-2xl">
-                {dish.name}
-              </h2>
+              {/* Dish title in bottom left corner */}
+              <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 text-white z-20">
+                <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-white drop-shadow-2xl">
+                  {dish.name}
+                </h3>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-transparent mb-3"></div>
+                <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl">
+                  {dish.turkish}
+                </p>
+              </div>
             </div>
           </div>
         ))}
