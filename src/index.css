@@ -53,6 +53,7 @@
   animation: slideshow 42s infinite ease-in-out;
 }
 
+
 /* Floating Animation */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -70,10 +71,6 @@
   }
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
 
 @keyframes shimmer {
   0% { background-position: -200% center; }

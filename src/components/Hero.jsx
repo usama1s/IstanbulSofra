@@ -87,8 +87,8 @@ const Hero = () => {
                 </div>
 
                 {/* Decorative elements around main content */}
-                <div className="absolute -top-10 -left-10 w-20 h-20 border-2 border-red-500/30 rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-10 -right-10 w-16 h-16 border border-white/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute -top-10 -left-10 w-20 h-20 border-2 border-red-500/30 rounded-full"></div>
+                    <div className="absolute -bottom-10 -right-10 w-16 h-16 border border-white/20 rounded-full"></div>
               </div>
             )}
             
@@ -112,7 +112,7 @@ const Hero = () => {
 
             {/* Additional visual elements for each slide */}
             <div className="absolute top-1/4 right-8 md:right-16 z-15 opacity-20">
-              <div className="w-2 h-2 bg-red-500 rounded-full mb-4 animate-pulse"></div>
+              <div className="w-2 h-2 bg-red-500 rounded-full mb-4"></div>
               <div className="w-1 h-16 bg-gradient-to-b from-red-500 to-transparent"></div>
             </div>
           </div>
@@ -124,7 +124,7 @@ const Hero = () => {
             {slides.map((_, index) => (
               <div key={index} className="w-8 h-1 bg-white/30 rounded-full overflow-hidden">
                 <div 
-                  className="h-full bg-red-500 rounded-full animate-pulse"
+                  className="h-full bg-red-500 rounded-full"
                   style={{
                     animationDelay: `${index * 6}s`,
                     animationDuration: '42s'
