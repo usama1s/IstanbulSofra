@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './MenuPage.css';
+import './App.css';
 
-const MenuPage = () => {
+function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const menuData = {
@@ -262,21 +262,21 @@ const MenuPage = () => {
   const renderMenuItems = () => {
     if (selectedCategory === 'all') {
       return Object.entries(menuData).map(([key, data]) => (
-        <div key={key} className="menu-category-section">
-          <h2 className="menu-category-title">{data.category}</h2>
+        <div key={key} className="category-section">
+          <h2 className="category-title">{data.category}</h2>
           <div className="menu-grid">
             {data.items.map((item, index) => (
-              <div key={index} className="menu-product-card">
+              <div key={index} className="product-card">
                 {item.dealBadge && (
-                  <div className="menu-deal-badge">{item.dealBadge}</div>
+                  <div className="deal-badge">{item.dealBadge}</div>
                 )}
-                <div className="menu-price-ribbon">
-                  <span className="menu-price-amount">{item.price}</span>
-                  <span className="menu-price-currency">PKR</span>
+                <div className="price-ribbon">
+                  <span className="price-amount">{item.price}</span>
+                  <span className="price-currency">PKR</span>
                 </div>
-                <div className="menu-product-info">
-                  <h3 className="menu-product-name">{item.name}</h3>
-                  <p className="menu-product-desc">{item.description}</p>
+                <div className="product-info">
+                  <h3 className="product-name">{item.name}</h3>
+                  <p className="product-desc">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -286,21 +286,21 @@ const MenuPage = () => {
     } else {
       const data = menuData[selectedCategory];
       return (
-        <div className="menu-category-section">
-          <h2 className="menu-category-title">{data.category}</h2>
+        <div className="category-section">
+          <h2 className="category-title">{data.category}</h2>
           <div className="menu-grid">
             {data.items.map((item, index) => (
-              <div key={index} className="menu-product-card">
+              <div key={index} className="product-card">
                 {item.dealBadge && (
-                  <div className="menu-deal-badge">{item.dealBadge}</div>
+                  <div className="deal-badge">{item.dealBadge}</div>
                 )}
-                <div className="menu-price-ribbon">
-                  <span className="menu-price-amount">{item.price}</span>
-                  <span className="menu-price-currency">PKR</span>
+                <div className="price-ribbon">
+                  <span className="price-amount">{item.price}</span>
+                  <span className="price-currency">PKR</span>
                 </div>
-                <div className="menu-product-info">
-                  <h3 className="menu-product-name">{item.name}</h3>
-                  <p className="menu-product-desc">{item.description}</p>
+                <div className="product-info">
+                  <h3 className="product-name">{item.name}</h3>
+                  <p className="product-desc">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -311,10 +311,10 @@ const MenuPage = () => {
   };
 
   return (
-    <div className="menu-page">
+    <div className="app">
       {/* Sidebar */}
-      <div className="menu-sidebar">
-        <button className="menu-toggle-btn">
+      <div className="sidebar">
+        <button className="menu-toggle">
           <span></span>
           <span></span>
           <span></span>
@@ -322,46 +322,46 @@ const MenuPage = () => {
         </button>
 
         <button
-          className={`menu-sidebar-btn ${selectedCategory === 'all' ? 'active' : ''}`}
+          className={`sidebar-btn ${selectedCategory === 'all' ? 'active' : ''}`}
           onClick={() => setSelectedCategory('all')}
         >
-          <span className="menu-sidebar-icon">📋</span>
-          <span className="menu-sidebar-label">ALL MENU</span>
+          <span className="sidebar-icon">📋</span>
+          <span className="sidebar-label">ALL MENU</span>
         </button>
 
-        <div className="menu-sidebar-divider"></div>
+        <div className="sidebar-divider"></div>
 
-        <div className="menu-sidebar-items">
+        <div className="sidebar-items">
           {sidebarItems.map((item) => (
             <button
               key={item.key}
-              className={`menu-sidebar-btn ${selectedCategory === item.key ? 'active' : ''}`}
+              className={`sidebar-btn ${selectedCategory === item.key ? 'active' : ''}`}
               onClick={() => setSelectedCategory(item.key)}
             >
-              <span className="menu-sidebar-icon">{item.icon}</span>
-              <span className="menu-sidebar-label">{item.label}</span>
+              <span className="sidebar-icon">{item.icon}</span>
+              <span className="sidebar-label">{item.label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="menu-main-content">
+      <div className="main-content">
         {/* Header */}
-        <header className="menu-header">
-          <div className="menu-logo-container">
-            <img src="/images/Istanbul-Sofra-White-Logo.png" alt="Istanbul Sofra" className="menu-main-logo" />
+        <header className="header">
+          <div className="logo-container">
+            <img src="/TURKISHLogo.png" alt="Istanbul Sofra" className="main-logo" />
           </div>
         </header>
 
         {/* Menu Content */}
-        <div className="menu-content-wrapper">
+        <div className="content-wrapper">
           {renderMenuItems()}
         </div>
 
         {/* Footer */}
-        <footer className="menu-footer">
-          <p className="menu-footer-text">
+        <footer className="footer">
+          <p className="footer-text">
             We've grilled, stirred, spiced, and maybe cried a little (onions, we swear)
             all to bring you a delicious experience. If you love it, tell everyone.
             If not… tell us!
@@ -372,5 +372,4 @@ const MenuPage = () => {
   );
 }
 
-export default MenuPage;
-
+export default App;
