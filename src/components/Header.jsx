@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,20 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
+
+  const handleNavClick = (item) => {
+    if (item.name === 'Menu') {
+      navigate('/menu')
+    } else if (location.pathname === '/') {
+      scrollToSection(item.href)
+    } else {
+      navigate('/')
+      setTimeout(() => {
+        scrollToSection(item.href)
+      }, 100)
+    }
+    setIsMenuOpen(false)
   }
 
   const navItems = [
@@ -37,7 +54,13 @@ const Header = () => {
                 {/* Logo */}
                 <div className="flex items-center">
                   <button 
-                    onClick={() => scrollToSection('home')}
+                    onClick={() => {
+                      if (location.pathname === '/') {
+                        scrollToSection('home')
+                      } else {
+                        navigate('/')
+                      }
+                    }}
                     className="transition-opacity duration-300 hover:opacity-80"
                   >
                     <img 
@@ -53,7 +76,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavClick(item)}
                   className={`font-medium hover:text-red-400 transition-colors duration-200 ${
                     isScrolled ? 'text-primary-200' : 'text-white'
                   }`}
@@ -84,10 +107,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => {
-                    scrollToSection(item.href)
-                    setIsMenuOpen(false)
-                  }}
+                  onClick={() => handleNavClick(item)}
                   className="block py-3 text-primary-200 hover:text-red-400 font-medium w-full text-left"
                 >
                   {item.name}
