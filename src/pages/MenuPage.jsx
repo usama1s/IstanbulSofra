@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MenuPage.css';
 import Header from '../components/Header';
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [selectedCategory]);
 
   const menuData = {
     burgersAndSandwiches: {
