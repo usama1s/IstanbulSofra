@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './MenuPage.css';
+import Header from '../components/Header';
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -347,8 +348,11 @@ const MenuPage = () => {
 
       {/* Main Content */}
       <div className="menu-main-content">
+        
+        <Header />
+
         {/* Menu Content */}
-        <div className="menu-content-wrapper">
+        <div className="menu-content-wrapper mt-20">
           {renderMenuItems()}
         </div>
 
