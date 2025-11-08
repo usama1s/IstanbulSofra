@@ -3,6 +3,7 @@
 .menu-page {
   display: flex;
   min-height: 100vh;
+  background: #171717;
 }
 
 /* Sidebar */
@@ -183,15 +184,15 @@
 .menu-main-content {
   margin-left: 100px;
   flex: 1;
-  background: white;
+  background: #171717;
 }
 
 /* Header */
 .menu-header {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: #171717;
   padding: 40px 40px 30px;
   text-align: center;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid #3a3a3a;
 }
 
 .menu-logo-container {
@@ -224,7 +225,7 @@
 .menu-category-title {
   font-size: 2em;
   font-weight: 700;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 35px;
   padding-bottom: 15px;
   border-bottom: 3px solid #e74c3c;
@@ -242,24 +243,25 @@
 
 /* Product Card */
 .menu-product-card {
-  background: #ffffff;
+  background: #2a2a2a;
   border-radius: 20px;
   overflow: visible;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   box-shadow:
-    inset 0 2px 8px rgba(0, 0, 0, 0.06),
-    0 4px 20px rgba(0, 0, 0, 0.08);
+    inset 0 2px 8px rgba(0, 0, 0, 0.3),
+    0 4px 20px rgba(0, 0, 0, 0.4);
   position: relative;
   padding: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-product-card:hover {
   transform: translateY(-8px);
   box-shadow:
-    inset 0 2px 12px rgba(0, 0, 0, 0.08),
-    0 12px 35px rgba(231, 76, 60, 0.15);
+    inset 0 2px 12px rgba(0, 0, 0, 0.4),
+    0 12px 35px rgba(231, 76, 60, 0.3);
+  border-color: rgba(231, 76, 60, 0.3);
 }
 
 .menu-deal-badge {
@@ -326,7 +328,7 @@
 .menu-product-name {
   font-size: 1.35em;
   font-weight: 700;
-  color: #2c3e50;
+  color: #ffffff;
   margin-bottom: 15px;
   line-height: 1.4;
   font-family: 'Poppins', sans-serif;
@@ -335,7 +337,7 @@
 
 .menu-product-desc {
   font-size: 0.95em;
-  color: #7f8c8d;
+  color: #b0b0b0;
   line-height: 1.7;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;

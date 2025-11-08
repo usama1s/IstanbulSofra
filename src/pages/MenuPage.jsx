@@ -347,13 +347,6 @@ const MenuPage = () => {
 
       {/* Main Content */}
       <div className="menu-main-content">
-        {/* Header */}
-        <header className="menu-header">
-          <div className="menu-logo-container">
-            <img src="/images/Istanbul-Sofra-White-Logo.png" alt="Istanbul Sofra" className="menu-main-logo" />
-          </div>
-        </header>
-
         {/* Menu Content */}
         <div className="menu-content-wrapper">
           {renderMenuItems()}
