@@ -1,31 +1,4 @@
 {
-  "popular": {
-    "category": "POPULAR ITEMS",
-    "sidebarLabel": "POPULAR",
-    "icon": "🔥",
-    "items": [
-      {
-        "name": "Turkish Karışık Platter",
-        "price": 360,
-        "description": "A flavorful mix of grilled and BBQ-style chicken chunks, served with aromatic rice, mashed potatoes, crispy fries, salad, yogurt, and a side of sauce."
-      },
-      {
-        "name": "Turkish Tea",
-        "price": 70,
-        "description": "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation."
-      },
-      {
-        "name": "Chocolate Ice Cream",
-        "price": 220,
-        "description": "Indulgently smooth and airy chocolate-flavored ice cream, shaved to a snow-like softness. A dreamy delight for chocolate lovers — rich in taste, light in texture, and topped with pure happiness."
-      },
-      {
-        "name": "Turkish Chicken Soup",
-        "price": 220,
-        "description": "A warm and comforting traditional Turkish chicken soup made with tender chicken pieces, aromatic herbs, and a squeeze of lemon for a soul-soothing experience."
-      }
-    ]
-  },
   "burgersAndSandwiches": {
     "category": "BURGERS & SANDWICHES",
     "sidebarLabel": "BURGERS",
@@ -177,7 +150,8 @@
       {
         "name": "Turkish Karışık Platter",
         "price": 360,
-        "description": "A flavorful mix of grilled and BBQ-style chicken chunks, served with aromatic rice, mashed potatoes, crispy fries, salad, yogurt, and a side of sauce."
+        "description": "A flavorful mix of grilled and BBQ-style chicken chunks, served with aromatic rice, mashed potatoes, crispy fries, salad, yogurt, and a side of sauce.",
+        "popular": true
       },
       {
         "name": "Turkish Köri Soslu Platter",
@@ -216,7 +190,8 @@
       {
         "name": "Turkish Tea",
         "price": 70,
-        "description": "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation."
+        "description": "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation.",
+        "popular": true
       },
       {
         "name": "Summer Drink",
@@ -238,7 +213,8 @@
       {
         "name": "Turkish Chicken Soup",
         "price": 250,
-        "description": "A warm and comforting traditional Turkish chicken soup made with tender chicken pieces, aromatic herbs, and a squeeze of lemon for a soul-soothing experience."
+        "description": "A warm and comforting traditional Turkish chicken soup made with tender chicken pieces, aromatic herbs, and a squeeze of lemon for a soul-soothing experience.",
+        "popular": true
       }
     ]
   },
@@ -255,7 +231,8 @@
       {
         "name": "Chocolate Ice Cream",
         "price": 220,
-        "description": "Indulgently smooth and airy chocolate-flavored ice cream, shaved to a snow-like softness. A dreamy delight for chocolate lovers — rich in taste, light in texture, and topped with pure happiness."
+        "description": "Indulgently smooth and airy chocolate-flavored ice cream, shaved to a snow-like softness. A dreamy delight for chocolate lovers — rich in taste, light in texture, and topped with pure happiness.",
+        "popular": true
       },
       {
         "name": "Mango Ice Cream",

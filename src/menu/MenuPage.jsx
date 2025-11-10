@@ -60,17 +60,36 @@ function MenuPage() {
   ];
 
   const renderMenuItems = () => {
-    const data = menuData[selectedCategory];
+    let items = [];
+    let categoryTitle = "";
+
+    if (selectedCategory === 'popular') {
+      // Collect all items with popular: true from all categories
+      categoryTitle = "POPULAR ITEMS";
+      Object.values(menuData).forEach(category => {
+        category.items.forEach(item => {
+          if (item.popular === true) {
+            items.push(item);
+          }
+        });
+      });
+    } else {
+      // Get items from selected category
+      const data = menuData[selectedCategory];
+      categoryTitle = data.category;
+      items = data.items;
+    }
+
     return (
       <div className="category-section">
-        <h2 className="category-title">{data.category}</h2>
+        <h2 className="category-title">{categoryTitle}</h2>
         {selectedCategory === 'popular' && (
           <div className="explore-message">
             ✨ Explore our full menu by scrolling through the categories on the left! ✨
           </div>
         )}
         <div className="menu-grid">
-          {data.items.map((item, index) => (
+          {items.map((item, index) => (
             <div key={index} className="product-card">
               {item.dealBadge && (
                 <div className="deal-badge">{item.dealBadge}</div>
