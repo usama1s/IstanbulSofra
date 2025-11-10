@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
-import MenuPage from './pages/MenuPage'
+import MenuPage from './menu/MenuPage'
 
 function AppContent() {
   const location = useLocation()

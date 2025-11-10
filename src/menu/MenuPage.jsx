@@ -1,0 +1,445 @@
+import React, { useState } from 'react';
+import './MenuPage.css';
+
+function MenuPage() {
+  const [selectedCategory, setSelectedCategory] = useState('popular');
+  const [showSplash, setShowSplash] = useState(true);
+  const [showScrollArrow, setShowScrollArrow] = useState(true);
+  const sidebarRef = React.useRef(null);
+
+  // Hide splash screen after animation
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000); // 3 seconds splash screen
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Handle sidebar scroll to hide/show arrow
+  React.useEffect(() => {
+    const sidebar = sidebarRef.current;
+    if (!sidebar) return;
+
+    const handleScroll = () => {
+      const { scrollTop, scrollHeight, clientHeight } = sidebar;
+      // Check if sidebar is scrollable
+      const isScrollable = scrollHeight > clientHeight;
+      // Check if at bottom with larger threshold
+      const isAtBottom = scrollTop + clientHeight >= scrollHeight - 20; // 20px threshold
+      
+      // Only show arrow if scrollable and not at bottom
+      setShowScrollArrow(isScrollable && !isAtBottom);
+    };
+
+    sidebar.addEventListener('scroll', handleScroll);
+    
+    // Check initial state
+    handleScroll();
+    
+    // Also check on window resize
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      sidebar.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
+
+  const menuData = {
+    popular: {
+      category: "POPULAR ITEMS",
+      sidebarLabel: "POPULAR",
+      icon: "🔥",
+      items: [
+        {
+          name: "Turkish Karışık Platter",
+          price: 360,
+          description: "A flavorful mix of grilled and BBQ-style chicken chunks, served with aromatic rice, mashed potatoes, crispy fries, salad, yogurt, and a side of sauce."
+        },
+        {
+          name: "Turkish Tea",
+          price: 70,
+          description: "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation."
+        },
+        {
+          name: "Chocolate Ice Cream",
+          price: 220,
+          description: "Indulgently smooth and airy chocolate-flavored ice cream, shaved to a snow-like softness. A dreamy delight for chocolate lovers — rich in taste, light in texture, and topped with pure happiness."
+        },
+        {
+          name: "Turkish Chicken Soup",
+          price: 220,
+          description: "A warm and comforting traditional Turkish chicken soup made with tender chicken pieces, aromatic herbs, and a squeeze of lemon for a soul-soothing experience."
+        }
+      ]
+    },
+    burgersAndSandwiches: {
+      category: "BURGERS & SANDWICHES",
+      sidebarLabel: "BURGERS",
+      icon: "🍔",
+      items: [
+        {
+          name: "Turkish Grilled Burger",
+          price: 330,
+          description: "Juicy grilled chicken patty marinated in Turkish spices, served in a toasted bun with fresh lettuce, tomatoes, and a signature garlic-yogurt sauce."
+        },
+        {
+          name: "Turkish BBQ Burger",
+          price: 330,
+          description: "Smoky BBQ chicken infused with Turkish herbs, flame-grilled and layered with crisp veggies, cheese, and a rich barbecue mayo in a soft burger bun."
+        },
+        {
+          name: "Grilled Sandwich",
+          price: 280,
+          description: "Tender grilled chicken slices tucked in toasted bread with melted cheese, fresh veggies, and a zesty house sauce – a hearty and satisfying bite."
+        },
+        {
+          name: "BBQ Sandwich",
+          price: 280,
+          description: "Savory BBQ chicken shredded and stacked inside a crusty sandwich roll, finished with tangy slaw and smoky sauce for a bold flavor hit."
+        },
+        {
+          name: "Egg Sandwich",
+          price: 230,
+          description: "Fluffy scrambled eggs combined with grilled chicken, layered in toasted bread with cheese, fresh greens, and a creamy dressing – perfect for any time of day."
+        },
+        {
+          name: "Turkish Panini",
+          price: 500,
+          description: "A crispy pressed panini filled with spiced Turkish-style chicken, melted cheese, and veggies, finished with a drizzle of garlic yogurt sauce."
+        }
+      ]
+    },
+    donerAndWraps: {
+      category: "DONER & WRAPS",
+      sidebarLabel: "WRAPS",
+      icon: "🌯",
+      items: [
+        {
+          name: "Turkish Grilled Doner",
+          price: 330,
+          description: "Juicy grilled chicken doner, marinated in traditional Turkish spices, thinly sliced and served in warm flatbread with crisp veggies and garlic-yogurt sauce."
+        },
+        {
+          name: "Turkish BBQ Doner",
+          price: 330,
+          description: "Smoky and tender BBQ chicken doner, slow-cooked with Turkish herbs, wrapped in flatbread with tangy pickles, onions, and signature BBQ mayo."
+        },
+        {
+          name: "Tantuni",
+          price: 330,
+          description: "A spicy Turkish street-food classic — finely chopped chicken sautéed in oil, peppers, and herbs, wrapped in lavash bread with fresh vegetables and sumac onions."
+        },
+        {
+          name: "Lahmachun Wrap",
+          price: 350,
+          description: "A thin, soft Turkish flatbread topped with seasoned minced chicken, rolled with lettuce, onions, and a squeeze of lemon — light, fresh, and flavorful."
+        },
+        {
+          name: "Turkish Adana Kebab Wrap",
+          price: 450,
+          description: "Inspired by the famous Adana kebab — spicy minced chicken skewers grilled to perfection, wrapped with garlic sauce, sumac onions, and salad in lavash."
+        },
+        {
+          name: "Turkish Shawarma",
+          price: 320,
+          description: "Succulent layers of marinated grilled chicken shaved from the spit, wrapped in soft flatbread with garlic tahini sauce, pickles, and fresh veggies."
+        },
+        {
+          name: "Taco",
+          price: 320,
+          description: "A soft taco shell filled with seasoned chicken, crisp lettuce, fresh veggies, and flavorful sauces — a fusion twist with Turkish-inspired taste."
+        }
+      ]
+    },
+    friesAndTaco: {
+      category: "FRIES",
+      sidebarLabel: "FRIES",
+      icon: "🍟",
+      items: [
+        {
+          name: "Simple Fries",
+          price: 160,
+          description: "Crispy golden fries, lightly salted and served hot — the perfect classic side or snack."
+        },
+        {
+          name: "Simple Fries L",
+          price: 300,
+          description: "Crispy golden fries, lightly salted and served hot — the perfect classic side or snack in large size."
+        },
+        {
+          name: "Doner Loaded Fries",
+          price: 320,
+          description: "Crispy fries loaded with juicy grilled chicken doner, drizzled with garlic-yogurt sauce and tangy toppings — a bold and filling street-style treat."
+        },
+        {
+          name: "Doner Loaded Fries L",
+          price: 420,
+          description: "Crispy fries loaded with juicy grilled chicken doner, drizzled with garlic-yogurt sauce and tangy toppings — a bold and filling street-style treat in large size."
+        },
+        {
+          name: "Simple Loaded Fries",
+          price: 280,
+          description: "A generous serving of fries topped with creamy sauces, melted cheese, and light seasoning — simple, satisfying, and packed with flavor."
+        }
+      ]
+    },
+    pasta: {
+      category: "PASTA",
+      sidebarLabel: "PASTA",
+      icon: "🍝",
+      items: [
+        {
+          name: "Spaghetti Pasta",
+          price: 420,
+          description: "Traditional spaghetti served in your choice of sauce (red, white, or pink), topped with herbs and grilled chicken."
+        },
+        {
+          name: "Penne Pasta",
+          price: 480,
+          description: "Classic penne pasta served in your choice of red, white, or pink sauce — garnished with herbs."
+        },
+        {
+          name: "Alfredo Pasta",
+          price: 520,
+          description: "Silky and creamy Alfredo sauce over tender pasta, infused with garlic and parmesan, perfect for lovers of rich and comforting flavors."
+        },
+        {
+          name: "Turkish Pasta Salad",
+          price: 600,
+          description: "A light and refreshing Mediterranean-style salad made with tender orzo pasta, crisp cucumbers, creamy feta cheese, juicy pomegranate seeds, and fresh herbs."
+        },
+        {
+          name: "Anna Paul Turkish Pasta",
+          price: 430,
+          description: "Creamy Turkish-style pasta featuring penne tossed in a rich, spiced tomato-cream sauce, finished with herbs and optional chili flakes."
+        }
+      ]
+    },
+    plattersAndBowls: {
+      category: "PLATTERS & BOWLS",
+      sidebarLabel: "PLATTERS",
+      icon: "🍱",
+      items: [
+        {
+          name: "Turkish Karışık Platter",
+          price: 360,
+          description: "A flavorful mix of grilled and BBQ-style chicken chunks, served with aromatic rice, mashed potatoes, crispy fries, salad, yogurt, and a side of sauce."
+        },
+        {
+          name: "Turkish Köri Soslu Platter",
+          price: 390,
+          description: "Grilled chicken chunks smothered in rich Turkish-style curry sauce, served with seasoned rice, creamy mashed potatoes, fresh salad, crispy fries, yogurt, and house sauce."
+        },
+        {
+          name: "Double Turkish Karışık Platter",
+          price: 670,
+          description: "A generous double portion of mixed grilled and BBQ chicken chunks, served with rice, salad, fries, mashed potatoes, yogurt, and sauce. (2 Persons)",
+          dealBadge: "SAVE 50 PKR"
+        },
+        {
+          name: "Double Köri Soslu Platter",
+          price: 730,
+          description: "Double the serving of our curry-infused grilled chicken chunks, paired with rice, mashed potatoes, fresh salad, fries, yogurt, and sauce. (2 Persons)",
+          dealBadge: "SAVE 50 PKR"
+        },
+        {
+          name: "Menemen Bowl",
+          price: 250,
+          description: "A traditional Turkish scrambled egg dish with tomatoes, peppers, and spices, served with fresh bread."
+        },
+        {
+          name: "Donner Platter",
+          price: 360,
+          description: "Succulent layers of marinated grilled chicken shaved from the spit, served with rice, salad, and signature sauces."
+        }
+      ]
+    },
+    refreshingDrinks: {
+      category: "REFRESHING DRINKS",
+      sidebarLabel: "DRINKS",
+      icon: "🥤",
+      items: [
+        {
+          name: "Turkish Tea",
+          price: 70,
+          description: "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation."
+        },
+        {
+          name: "Summer Drink",
+          price: 160,
+          description: "A vibrant, electric-blue mocktail made with a citrusy blend of lemon and lime, topped with a splash of soda and a hint of sweetness. Served chilled over ice it's the perfect mix of tangy and refreshing."
+        },
+        {
+          name: "Mint Margarita",
+          price: 160,
+          description: "A cool and zesty twist on the classic margarita blended with fresh mint leaves, tangy lemon juice, and a splash of soda for a crisp, refreshing burst of flavor. Perfectly chilled and naturally invigorating."
+        }
+      ]
+    },
+    soup: {
+      category: "SOUP",
+      sidebarLabel: "SOUP",
+      icon: "🍲",
+      items: [
+        {
+          name: "Turkish Chicken Soup",
+          price: 250,
+          description: "A warm and comforting traditional Turkish chicken soup made with tender chicken pieces, aromatic herbs, and a squeeze of lemon for a soul-soothing experience."
+        }
+      ]
+    },
+    snowFlakeIceCream: {
+      category: "SNOW FLAKE ICE CREAM",
+      sidebarLabel: "ICE CREAM",
+      icon: "🍨",
+      items: [
+        {
+          name: "Vanilla",
+          price: 220,
+          description: "Delicately shaved, cloud-soft ice cream infused with smooth, classic vanilla flavor. Light, creamy, and perfectly sweet — a timeless treat that melts in your mouth like snow."
+        },
+        {
+          name: "Chocolate Ice Cream",
+          price: 220,
+          description: "Indulgently smooth and airy chocolate-flavored ice cream, shaved to a snow-like softness. A dreamy delight for chocolate lovers — rich in taste, light in texture, and topped with pure happiness."
+        },
+        {
+          name: "Mango Ice Cream",
+          price: 220,
+          description: "A tropical twist on our signature snowflake ice cream — infused with the rich, juicy flavor of ripe mangoes. Light as snow, smooth as cream, and bursting with sunny sweetness in every bite."
+        },
+        {
+          name: "Coffee Ice Cream",
+          price: 220,
+          description: "Rich and aromatic coffee-flavored ice cream, shaved to snow-like perfection. A delightful blend of bold coffee essence and creamy sweetness — perfect for coffee lovers seeking a cool, refreshing treat."
+        }
+      ]
+    },
+    simpleDrinks: {
+      category: "SIMPLE DRINKS",
+      sidebarLabel: "BEVERAGES",
+      icon: "🥤",
+      items: [
+        { name: "Pepsi Small", price: 90, description: "Refreshing Pepsi cola served chilled." },
+        { name: "7Up Small", price: 90, description: "Crisp and refreshing lemon-lime soda." },
+        { name: "Dew Small", price: 90, description: "Energizing citrus flavored soft drink." },
+        { name: "7UP Mint Small", price: 90, description: "Refreshing 7Up with a hint of mint." },
+        { name: "Sprite 1/2 Litre", price: 120, description: "Lemon-lime flavored soft drink in half liter." },
+        { name: "Pepsi Tin", price: 120, description: "Pepsi cola in convenient tin packaging." },
+        { name: "Coke Tin", price: 120, description: "Classic Coca-Cola in tin packaging." },
+        { name: "Revive", price: 50, description: "Hydrating isotonic sports drink." }
+      ]
+    }
+  };
+
+  const sidebarItems = [
+    { key: 'popular', label: 'POPULAR', icon: '🔥' },
+    { key: 'burgersAndSandwiches', label: 'BURGERS', icon: '🍔' },
+    { key: 'donerAndWraps', label: 'WRAPS', icon: '🌯' },
+    { key: 'friesAndTaco', label: 'FRIES', icon: '🍟' },
+    { key: 'pasta', label: 'PASTA', icon: '🍝' },
+    { key: 'plattersAndBowls', label: 'PLATTERS', icon: '🍱' },
+    { key: 'soup', label: 'SOUP', icon: '🍲' },
+    { key: 'snowFlakeIceCream', label: 'ICE CREAM', icon: '🍨' },
+    { key: 'refreshingDrinks', label: 'DRINKS', icon: '🥤' },
+    { key: 'simpleDrinks', label: 'BEVERAGES', icon: '🥤' }
+  ];
+
+  const renderMenuItems = () => {
+    const data = menuData[selectedCategory];
+    return (
+      <div className="category-section">
+        <h2 className="category-title">{data.category}</h2>
+        {selectedCategory === 'popular' && (
+          <div className="explore-message">
+            ✨ Explore our full menu by scrolling through the categories on the left! ✨
+          </div>
+        )}
+        <div className="menu-grid">
+          {data.items.map((item, index) => (
+            <div key={index} className="product-card">
+              {item.dealBadge && (
+                <div className="deal-badge">{item.dealBadge}</div>
+              )}
+              <div className="price-ribbon">
+                <span className="price-amount">{item.price}</span>
+                <span className="price-currency">PKR</span>
+              </div>
+              <div className="product-info">
+                <h3 className="product-name">{item.name}</h3>
+                <p className="product-desc">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  // Show splash screen
+  if (showSplash) {
+    return (
+      <div className="splash-screen">
+        <div className="splash-content">
+          <div className="welcome-text">Welcome to</div>
+          <img src="/images/Istanbul-Sofra-Black-Logo.png" alt="Istanbul Sofra" className="splash-logo" />
+          <div className="welcome-subtitle">Experience Authentic Turkish Flavors</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="app">
+      {/* Sidebar */}
+      <div className="sidebar" ref={sidebarRef}>
+        <div className="sidebar-items">
+          {sidebarItems.map((item) => (
+            <button
+              key={item.key}
+              className={`sidebar-btn ${selectedCategory === item.key ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(item.key)}
+            >
+              <span className="sidebar-icon">{item.icon}</span>
+              <span className="sidebar-label">{item.label}</span>
+            </button>
+          ))}
+        </div>
+        {showScrollArrow && (
+          <div className="scroll-indicator">
+            <div className="scroll-arrow"></div>
+          </div>
+        )}
+      </div>
+
+      {/* Main Content */}
+      <div className="main-content">
+        {/* Header */}
+        <header className="header">
+          <div className="logo-container">
+            <img src="/images/Istanbul-Sofra-Black-Logo.png" alt="Istanbul Sofra" className="main-logo" />
+          </div>
+        </header>
+
+        {/* Menu Content */}
+        <div className="content-wrapper">
+          {renderMenuItems()}
+        </div>
+
+        {/* Footer */}
+        <footer className="footer">
+          <p className="footer-text">
+            We've grilled, stirred, spiced, and maybe cried a little (onions, we swear)
+            all to bring you a delicious experience. If you love it, tell everyone.
+            If not… tell us!
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
+export default MenuPage;
+
