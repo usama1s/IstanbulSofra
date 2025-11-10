@@ -25,11 +25,13 @@ const Header = () => {
 
   const handleNavClick = (item) => {
     if (item.name === 'Menu') {
-      navigate('/menu')
-    } else if (location.pathname === '/') {
+      navigate('/')
+    } else if (item.name === 'Home') {
+      navigate('/home')
+    } else if (location.pathname === '/home') {
       scrollToSection(item.href)
     } else {
-      navigate('/')
+      navigate('/home')
       setTimeout(() => {
         scrollToSection(item.href)
       }, 100)
@@ -44,7 +46,7 @@ const Header = () => {
     { name: 'Contact', href: 'contact' },
   ]
 
-  const isMenuPage = location.pathname === '/menu'
+  const isMenuPage = location.pathname === '/'
   
   return (
     <>
@@ -57,10 +59,10 @@ const Header = () => {
                 <div className="flex items-center">
                   <button 
                     onClick={() => {
-                      if (location.pathname === '/') {
+                      if (location.pathname === '/home') {
                         scrollToSection('home')
                       } else {
-                        navigate('/')
+                        navigate('/home')
                       }
                     }}
                     className="transition-opacity duration-300 hover:opacity-80"

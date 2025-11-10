@@ -8,15 +8,15 @@ import MenuPage from './menu/MenuPage'
 
 function AppContent() {
   const location = useLocation()
-  const showHeader = location.pathname === '/'
+  const showHeader = location.pathname === '/home'
 
   return (
     <div className="min-h-screen bg-primary-900">
       <ScrollToTop />
       {showHeader && <Header />}
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/" element={<MenuPage />} />
+        <Route path="/home" element={<HomePage />} />
       </Routes>
       {showHeader && <Footer />}
     </div>

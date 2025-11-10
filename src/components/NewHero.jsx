@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
+import { useNavigate } from 'react-router-dom'
 import menuData from '../menu/menuData.json'
 import { Maximize, Minimize } from 'lucide-react'
 import "slick-carousel/slick/slick.css"
@@ -7,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css"
 
 const NewHero = () => {
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const navigate = useNavigate()
 
   // Get all popular dishes with images from new menu
   const getFeaturedDishes = () => {
@@ -28,10 +30,7 @@ const NewHero = () => {
   const dishes = getFeaturedDishes()
 
   const scrollToMenu = () => {
-    const element = document.getElementById('menu')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    navigate('/')
   }
 
   const toggleFullscreen = () => {
