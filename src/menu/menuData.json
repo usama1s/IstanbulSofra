@@ -190,7 +190,8 @@
     "items": [
       {
         "name": "Turkish Tea",
-        "price": 70,
+        "price": 100,
+        "discounted_price": 70,
         "description": "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation.",
         "image": "/images/turkish-tea.jpeg",
         "popular": true

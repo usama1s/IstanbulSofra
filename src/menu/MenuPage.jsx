@@ -95,8 +95,18 @@ function MenuPage() {
                 <div className="deal-badge">{item.dealBadge}</div>
               )}
               <div className="price-ribbon">
-                <span className="price-amount">{item.price}</span>
-                <span className="price-currency">PKR</span>
+                {item.discounted_price ? (
+                  <>
+                    <span className="price-amount" style={{ textDecoration: 'line-through', opacity: 0.6, marginRight: '8px' }}>{item.price}</span>
+                    <span className="price-amount">{item.discounted_price}</span>
+                    <span className="price-currency">PKR</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="price-amount">{item.price}</span>
+                    <span className="price-currency">PKR</span>
+                  </>
+                )}
               </div>
               <div className="product-info">
                 <h3 className="product-name">{item.name}</h3>
