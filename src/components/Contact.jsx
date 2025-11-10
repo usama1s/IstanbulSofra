@@ -82,7 +82,7 @@ const Contact = () => {
                 <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
                   {/* Replace the src with your QR code image path */}
                   <img 
-                    src="/images/feedback-QR.png" 
+                    src="/images/feedback-QR.jpeg" 
                     alt="Feedback QR Code" 
                     className="w-48 h-48 md:w-64 md:h-64 mx-auto"
                   />
