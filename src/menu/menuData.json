@@ -85,27 +85,32 @@
     "items": [
       {
         "name": "Simple Fries",
-        "price": 160,
+        "price": 190,
+        "discounted_price": 160,
         "description": "Crispy golden fries, lightly salted and served hot — the perfect classic side or snack."
       },
       {
         "name": "Simple Fries L",
-        "price": 300,
+        "price": 330,
+        "discounted_price": 300,
         "description": "Crispy golden fries, lightly salted and served hot — the perfect classic side or snack in large size."
       },
       {
         "name": "Doner Loaded Fries",
-        "price": 320,
+        "price": 350,
+        "discounted_price": 320,
         "description": "Crispy fries loaded with juicy grilled chicken doner, drizzled with garlic-yogurt sauce and tangy toppings — a bold and filling street-style treat."
       },
       {
         "name": "Doner Loaded Fries L",
-        "price": 420,
+        "price": 480,
+        "discounted_price": 420,
         "description": "Crispy fries loaded with juicy grilled chicken doner, drizzled with garlic-yogurt sauce and tangy toppings — a bold and filling street-style treat in large size."
       },
       {
         "name": "Simple Loaded Fries",
-        "price": 280,
+        "price": 310,
+        "discounted_price": 280,
         "description": "A generous serving of fries topped with creamy sauces, melted cheese, and light seasoning — simple, satisfying, and packed with flavor."
       }
     ]
@@ -229,23 +234,27 @@
     "items": [
       {
         "name": "Vanilla",
-        "price": 220,
+        "price": 250,
+        "discounted_price": 220,
         "description": "Delicately shaved, cloud-soft ice cream infused with smooth, classic vanilla flavor. Light, creamy, and perfectly sweet — a timeless treat that melts in your mouth like snow."
       },
       {
         "name": "Chocolate Ice Cream",
-        "price": 220,
+        "price": 250,
+        "discounted_price": 220,
         "description": "Indulgently smooth and airy chocolate-flavored ice cream, shaved to a snow-like softness. A dreamy delight for chocolate lovers — rich in taste, light in texture, and topped with pure happiness.",
         "popular": true
       },
       {
         "name": "Mango Ice Cream",
-        "price": 220,
+        "price": 250,
+        "discounted_price": 220,
         "description": "A tropical twist on our signature snowflake ice cream — infused with the rich, juicy flavor of ripe mangoes. Light as snow, smooth as cream, and bursting with sunny sweetness in every bite."
       },
       {
         "name": "Coffee Ice Cream",
-        "price": 220,
+        "price": 250,
+        "discounted_price": 220,
         "description": "Rich and aromatic coffee-flavored ice cream, shaved to snow-like perfection. A delightful blend of bold coffee essence and creamy sweetness — perfect for coffee lovers seeking a cool, refreshing treat."
       }
     ]
