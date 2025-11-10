@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
-import { menuItems } from './Menu'
+import menuData from '../menu/menuData.json'
 import { Maximize, Minimize } from 'lucide-react'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -8,15 +8,14 @@ import "slick-carousel/slick/slick-theme.css"
 const NewHero = () => {
   const [isFullscreen, setIsFullscreen] = useState(false)
 
-  // Get all featured dishes from menu
+  // Get all popular dishes with images from new menu
   const getFeaturedDishes = () => {
     const featured = []
-    Object.values(menuItems).forEach(category => {
-      category.forEach(item => {
-        if (item.featured && item.image) {
+    Object.values(menuData).forEach(category => {
+      category.items.forEach(item => {
+        if (item.popular === true && item.image && item.image.trim() !== '') {
           featured.push({
             name: item.name,
-            turkish: item.turkish,
             image: item.image,
             price: item.price
           })
@@ -139,9 +138,6 @@ const NewHero = () => {
                   {dish.name}
                 </h3>
                 <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-transparent mb-3 mx-auto md:mx-0"></div>
-                <p className="text-red-400 text-lg md:text-2xl lg:text-3xl font-medium italic drop-shadow-xl">
-                  {dish.turkish}
-                </p>
                   {isFullscreen && dish.price && (
                     <p className="text-yellow-400 text-xl md:text-3xl lg:text-4xl font-bold mt-4 drop-shadow-xl">
                      ₨{dish.price}

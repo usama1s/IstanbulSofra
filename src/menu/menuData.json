@@ -151,7 +151,8 @@
         "name": "Turkish Karışık Platter",
         "price": 360,
         "description": "A flavorful mix of grilled and BBQ-style chicken chunks, served with aromatic rice, mashed potatoes, crispy fries, salad, yogurt, and a side of sauce.",
-        "popular": true
+        "popular": true,
+        "image": "/images/karisik-platter.jpeg"
       },
       {
         "name": "Turkish Köri Soslu Platter",
@@ -191,6 +192,7 @@
         "name": "Turkish Tea",
         "price": 70,
         "description": "Turkish tea, traditionally brewed with black tea leaves, is light, aromatic, and gentle on the stomach. Known for aiding digestion, it can help soothe bloating and discomfort after meals. Rich in antioxidants, it supports heart health and may improve circulation.",
+        "image": "/images/turkish-tea.jpeg",
         "popular": true
       },
       {
@@ -214,7 +216,8 @@
         "name": "Turkish Chicken Soup",
         "price": 250,
         "description": "A warm and comforting traditional Turkish chicken soup made with tender chicken pieces, aromatic herbs, and a squeeze of lemon for a soul-soothing experience.",
-        "popular": true
+        "popular": true,
+        "image": "/images/Iskender.jpg"
       }
     ]
   },
