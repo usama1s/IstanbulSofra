@@ -48,8 +48,8 @@ const Header = () => {
   
   return (
     <>
-      <header className={`${isMenuPage ? 'relative' : 'fixed'} w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-primary-900/95 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'
+      <header className={`${isMenuPage ? 'sticky top-0 bg-primary-900' : 'fixed'} w-full z-50 transition-all duration-300 ${
+        isScrolled && !isMenuPage ? 'bg-primary-900/95 backdrop-blur-sm shadow-lg py-2' : isMenuPage ? 'py-4' : 'bg-transparent py-4'
       }`}>
         <nav className={isMenuPage ? 'container-custom' : ''}>
           <div className="flex justify-between items-center">
